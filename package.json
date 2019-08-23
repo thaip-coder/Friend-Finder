@@ -17,5 +17,9 @@
   "bugs": {
     "url": "https://github.com/tp222/Friend-Finder/issues"
   },
-  "homepage": "https://github.com/tp222/Friend-Finder#readme"
+  "homepage": "https://github.com/tp222/Friend-Finder#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "path": "^0.12.7"
+  }
 }
