@@ -3,7 +3,7 @@ Homework 13
 
 Questions:
     1. You are curious
-    2. You anger easily
+    2. You are patient
     3. You are usually calm
     4. You prefer to relax
     5. You like to explore
