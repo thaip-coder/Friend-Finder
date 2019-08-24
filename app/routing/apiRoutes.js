@@ -13,7 +13,31 @@ module.exports = function(app) {
 
     //API POST request
     app.post('/api/friends', function(req, res) {
-        
+        var userScore = req.body.scores;
+        var scoreArray = [];
+        var pkmnMatch = 0;
+
+        //For loop that runs through all pokemon and calculates scores for each one according to user input
+        for(var i = 0; i < friends.length; i++) {
+            var scoreDifference = 0;
+            for(var j = 0; j < userScore.length; j++) {
+                scoreDifference += (Math.abs(parseInt(friends[i].scores[j]) - parseInt(userScore[j])));
+            }
+            //Pushes all results to scoreArray
+            scoreArray.push(scoreDifference);
+        }
+
+        //Finds best match after comparing pokemon scores to user input
+        for(var i = 0; i < scoreArray.length; i++) {
+            if(scoreArray[i] <= scoreArray[pkmnMatch]){
+                pkmnMatch = i;
+            }
+        }
+
+        //Assigns best matched pokemon
+        var pokemon = friends[pkmnMatch];
+        res.json(pokemon);
+
     });
 
 
