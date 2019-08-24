@@ -1,3 +1,6 @@
+//Html routes are used to help direct the user. 
+//Whenever they click on a link the router will understand based on the information in this file, what page to deliver to them.
+
 //Required Path variable
 var path = require('path');
 //route
