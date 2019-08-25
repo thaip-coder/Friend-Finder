@@ -18,7 +18,8 @@ Homework 13
     - Hit the start survey button and fill out the fields presented
 
 4. Images of the code working
- 
+    - ![Screenshot](pkmnfinder.png)
+    
 5. Deployed version of the app:
    [Heroku Deployed Version](https://ffttp222.herokuapp.com/)
 
