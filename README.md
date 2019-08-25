@@ -2,7 +2,7 @@
 Homework 13
 
 1. The problem my app is trying to solve:
-    - My app is trying to match a user to their ideal pokemon.
+    - My app is trying to match a user to their most compatible friend.
    
 2. How is the app organized:
     - The app consists of 2 html files(home and survey) and 3 js files(friends, apiRoutes, and htmlRoutes) to facilitate data transfer and data storage.
