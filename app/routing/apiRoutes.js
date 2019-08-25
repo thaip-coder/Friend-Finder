@@ -41,7 +41,7 @@ module.exports = function(app) {
             //Pushes all results to scoreArray
             scoreArray.push(scoreDifference);  
         };
-        console.log("All pkmn values: " + scoreArray);
+        console.log("All friend values: " + scoreArray);
 
         //Finds best match after comparing pokemon scores to user input
         for(var i = 0; i < scoreArray.length; i++) {
