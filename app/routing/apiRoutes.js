@@ -29,8 +29,7 @@ module.exports = function(app) {
         console.log(userScore);
         console.log(userArray);
         console.log(sum);
-        console.log(req.body);
-        console.log(req.body.scores);
+        
 
         
     
@@ -44,7 +43,7 @@ module.exports = function(app) {
             //Pushes all results to scoreArray
             scoreArray.push(scoreDifference);  
         };
-        //console.log(scoreArray);
+        console.log("All pkmn values: " + scoreArray);
 
         //Finds best match after comparing pokemon scores to user input
         for(var i = 0; i < scoreArray.length; i++) {
