@@ -16,18 +16,16 @@ module.exports = function(app) {
         var userScore = req.body.scores;
         var scoreArray = [];
         var pkmnMatch = 0;
-        var userArray = parseInt(userScore);
         var scoreDifference = 0;  
         var sum = 0;
         var pkmnSum = 0;    
 
         //User score sum
-        for(var i = 0; i < userArray.length; i++) {
+        for(var i = 0; i < userScore.length; i++) {
             sum = 0;
-            sum = sum + userArray[i];
+            sum = sum + parseInt(userScore[i]);
         };
         console.log(userScore);
-        console.log(userArray);
         console.log(sum);
         
 
