@@ -15,10 +15,10 @@ module.exports = function(app) {
     app.post('/api/friends', function(req, res) {
         var userScore = req.body.scores;
         var scoreArray = [];
-        var pkmnMatch = 0;
+        var bestMatch = 0;
         var scoreDifference = 0;  
         var sum = 0;
-        var pkmnSum = 0;    
+        var friendSum = 0;    
 
         //User score sum
         for(var i = 0; i < userScore.length; i++) {
@@ -32,11 +32,11 @@ module.exports = function(app) {
         for(var i = 0; i < friends.length; i++) {
             scoreDifference = 0;
             //Creates array for each Pokemon's values
-            pkmnArray = friends[i].scores;
+            friendArray = friends[i].scores;
             //Calculates the scoreDifference between each Pokemon's values and the user's values
-            for(var j = 0; j < pkmnArray.length; j++) {
-                pkmnSum = 0;
-                scoreDifference = scoreDifference + (Math.abs((pkmnSum += pkmnArray[j]) - sum));
+            for(var j = 0; j < friendArray.length; j++) {
+                friendSum = 0;
+                scoreDifference = scoreDifference + (Math.abs((friendSum += friendArray[j]) - sum));
             }
             //Pushes all results to scoreArray
             scoreArray.push(scoreDifference);  
@@ -45,14 +45,14 @@ module.exports = function(app) {
 
         //Finds best match after comparing pokemon scores to user input
         for(var i = 0; i < scoreArray.length; i++) {
-            if(scoreArray[i] <= scoreArray[pkmnMatch]){
-                pkmnMatch = i;
+            if(scoreArray[i] <= scoreArray[bestMatch]){
+                bestMatch = i;
             }
         }
 
         //Assigns best matched pokemon
-        var pokemon = friends[pkmnMatch];
-        res.json(pokemon);  
+        var bestFriend = friends[bestMatch];
+        res.json(bestFriend);  
         
         friends.push(req.body);
 
