@@ -43,13 +43,7 @@ var friends = [
         "name": "Misty Yawa",
         "picture": "http://pm1.narvii.com/6372/e5cdf8f2c401c02d2652f5ae684d9f35ce14048e_00.jpg",
         "scores": [3, 3, 4, 1, 2, 5, 5, 5, 1, 3]
-    },
-    {
-        "name": "Professor Oak",
-        "picture": "https://thehardtimes.net/wp-content/uploads/2019/02/professor-oak.jpg",
-        "scores": [4, 5, 5, 2, 5, 4, 5, 4, 2, 5]
     }
-
 ]
 
 module.exports = friends;

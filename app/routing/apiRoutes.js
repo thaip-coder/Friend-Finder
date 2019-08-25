@@ -35,7 +35,7 @@ module.exports = function(app) {
             friendArray = friends[i].scores;
                 //Calculates total value for friend
                 for(var j = 0; j < friendArray.length; j++) {
-                    friendSum += friendArray[j]
+                    friendSum += friendArray[j];
                 };
             //Calculates the scoreDifference between each friends' values and the user's values  
             scoreDifference = Math.abs(friendSum - sum);
