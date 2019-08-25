@@ -22,11 +22,10 @@ module.exports = function(app) {
 
         //User score sum
         for(var i = 0; i < userScore.length; i++) {
-            sum = 0;
-            sum = sum + parseInt(userScore[i]);
+            sum += parseInt(userScore[i]);
         };
-        console.log(userScore);
-        console.log(sum);
+        console.log("User inputes: " + userScore);
+        console.log("Total of user value: " + sum);
         
         //Traverses friends array
         for(var i = 0; i < friends.length; i++) {
@@ -35,11 +34,10 @@ module.exports = function(app) {
             friendArray = friends[i].scores;
             //Calculates the scoreDifference between each Pokemon's values and the user's values
             for(var j = 0; j < friendArray.length; j++) {
-                friendSum = 0;
                 scoreDifference = scoreDifference + (Math.abs((friendSum += friendArray[j]) - sum));
             }
-            //Pushes all results to scoreArray
-            scoreArray.push(scoreDifference);  
+        //Pushes all results to scoreArray
+        scoreArray.push(scoreDifference);
         };
         console.log("All friend values: " + scoreArray);
 
