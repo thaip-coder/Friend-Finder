@@ -28,12 +28,12 @@ module.exports = function(app) {
         console.log(userScore);
         console.log(sum);
         
-
-        
-    
+        //Traverses friends array
         for(var i = 0; i < friends.length; i++) {
             scoreDifference = 0;
+            //Creates array for each Pokemon's values
             pkmnArray = friends[i].scores;
+            //Calculates the scoreDifference between each Pokemon's values and the user's values
             for(var j = 0; j < pkmnArray.length; j++) {
                 pkmnSum = 0;
                 scoreDifference = scoreDifference + (Math.abs((pkmnSum += pkmnArray[j]) - sum));
