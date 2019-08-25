@@ -37,21 +37,21 @@ module.exports = function(app) {
                 for(var j = 0; j < friendArray.length; j++) {
                     friendSum += friendArray[j]
                 };
-            //Calculates the scoreDifference between each Pokemon's values and the user's values  
+            //Calculates the scoreDifference between each friends' values and the user's values  
             scoreDifference = Math.abs(friendSum - sum);
             //Pushes all results to scoreArray
             scoreArray.push(scoreDifference);
         };
         console.log("All friend values: " + scoreArray);
 
-        //Finds best match after comparing pokemon scores to user input
+        //Finds best match after comparing friends' scores to user input
         for(var i = 0; i < scoreArray.length; i++) {
             if(scoreArray[i] <= scoreArray[bestMatch]){
                 bestMatch = i;
             }
         }
 
-        //Assigns best matched pokemon
+        //Assigns best matched friend
         var bestFriend = friends[bestMatch];
         res.json(bestFriend);  
         
