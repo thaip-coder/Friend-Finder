@@ -55,6 +55,7 @@ module.exports = function(app) {
         var bestFriend = friends[bestMatch];
         res.json(bestFriend);  
         
+        //Pushes user information to friends.js array
         friends.push(req.body);
 
     });  
