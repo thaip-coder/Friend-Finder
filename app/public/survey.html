@@ -238,10 +238,8 @@
         </div>
     </div>
 
-</body>
-
-<!-- Jquery to capture user input -->
-<script type="text/javascript">
+    <!-- Jquery to capture user input -->
+    <script type="text/javascript">
         $(document).ready(function() {
             $("#submit").on('click', function() {
                 //Validates all user input (Makes sure all fields are filled)
@@ -253,7 +251,7 @@
                             isValid = false;
                         }
                     });
-    
+
                     //Checks all question input fields
                     $('.chosen-select').each(function() {
                         if($(this).val() === ''){
@@ -262,7 +260,7 @@
                     });
                     return isValid;
                 };
-    
+
                 //Logs user input from all fields
                 if(validate() == true) {
                     var input = {
@@ -282,20 +280,20 @@
                         ]
                     };
                     console.log(input);
-    
+
                     //Grabs current URL of website
                     var currentURL = window.location.origin;
-    
+
                     //Posts data to friends API
                     $.post(currentURL + "/api/friends", input, function(data) {
                         //Grabs results of pokemon that best matches user input
                         $("#matchName").text(data.name);
                         $("#matchPic").attr("src", data.picture);
                     });
-    
+
                     //Shows the modal
                     $('.modal').modal();
-    
+
                     //Clears all input
                     $('.cl').val('');
                 } else {
@@ -303,6 +301,8 @@
                 }
             });
         });
-        </script>
+    </script>
+
+</body>
 
 </html>

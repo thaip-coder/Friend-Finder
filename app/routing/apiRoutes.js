@@ -17,16 +17,30 @@ module.exports = function(app) {
         var scoreArray = [];
         var pkmnMatch = 0;
         var userArray = parseInt(userScore);
+        var scoreDifference = 0;  
+        var sum = 0;
+        var pkmnSum = 0;    
+
+        //User score sum
+        for(var i = 0; i < userArray.length; i++) {
+            sum = 0;
+            sum = sum + userArray[i];
+        };
+        console.log(userScore);
+        console.log(userArray);
+        console.log(sum);
         
-        //For loop that runs through all pokemon and calculates scores for each one according to user input
+    
         for(var i = 0; i < friends.length; i++) {
-            var scoreDifference = 0;
-            for(var j = 0; j < userArray.length; j++) {
-                scoreDifference += (Math.abs(friends[i].scores[j] - userArray[j]));
+            scoreDifference = 0;
+            pkmnArray = friends[i].scores;
+            for(var j = 0; j < pkmnArray.length; j++) {
+                pkmnSum = 0;
+                scoreDifference = scoreDifference + (Math.abs((pkmnSum += pkmnArray[j]) - sum));
             }
             //Pushes all results to scoreArray
-            scoreArray.push(scoreDifference);
-        }
+            scoreArray.push(scoreDifference);  
+        };
         console.log(scoreArray);
 
         //Finds best match after comparing pokemon scores to user input
