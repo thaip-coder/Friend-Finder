@@ -239,70 +239,71 @@
         </div>
     </div>
 
-
-    <!-- Jquery to capture user input -->
-    <script>
-    $(document).ready(function() {
-        $("#submit").on('click', function() {
-            //Validates all user input (Makes sure all fields are filled)
-            function validate() {
-                var isValid = true;
-                //Checks initial Name and Picture field
-                $('.validate').each(function() {
-                    if($(this).val() === ''){
-                        isValid = false;
-                    }
-                });
-
-                //Checks all question input fields
-                $('.chosen-select').each(function() {
-                    if($(this).val() === ''){
-                        isValid = false;
-                    }
-                });
-                return isValid;
-            };
-
-            //Logs user input from all fields
-            if(validate() == true) {
-                var input = {
-                    name: $('#name').val().trim(),
-                    picture: $('#photo').val().trim(),
-                    scores: [
-                        $('#q1').val(),
-                        $('#q2').val(),
-                        $('#q3').val(),
-                        $('#q4').val(),
-                        $('#q5').val(),
-                        $('#q6').val(),
-                        $('#q7').val(),
-                        $('#q8').val(),
-                        $('#q9').val(),
-                        $('#q10').val()
-                    ]
-                };
-
-                //Grabs current URL of website
-                var currentURL = window.location.origin;
-
-                //Posts data to friends API
-                $.post(currentURL + "/api/friends", input, function(data) {
-                    //Grabs results of pokemon that best matches user input
-                    $("#matchName").text(data.name);
-                    $("#matchPic").attr("src", data.picture);
-                });
-
-                //Shows the modal
-                $('.modal').modal();
-
-                //Clears all input
-                //$('.cl').val('');
-            } else {
-                alert("Please fill out all fields before submission!")
-            }
-        });
-    });
-    </script>
 </body>
+
+<!-- Jquery to capture user input -->
+<script type="text/javascript">
+        $(document).ready(function() {
+            $("#submit").on('click', function() {
+                //Validates all user input (Makes sure all fields are filled)
+                function validate() {
+                    var isValid = true;
+                    //Checks initial Name and Picture field
+                    $('.validate').each(function() {
+                        if($(this).val() === ''){
+                            isValid = false;
+                        }
+                    });
+    
+                    //Checks all question input fields
+                    $('.chosen-select').each(function() {
+                        if($(this).val() === ''){
+                            isValid = false;
+                        }
+                    });
+                    return isValid;
+                };
+    
+                //Logs user input from all fields
+                if(validate() == true) {
+                    var input = {
+                        name: $('#name').val().trim(),
+                        picture: $('#photo').val().trim(),
+                        scores: [
+                            $('#q1').val(),
+                            $('#q2').val(),
+                            $('#q3').val(),
+                            $('#q4').val(),
+                            $('#q5').val(),
+                            $('#q6').val(),
+                            $('#q7').val(),
+                            $('#q8').val(),
+                            $('#q9').val(),
+                            $('#q10').val(),
+                        ]
+                    };
+                    console.log(input);
+    
+                    //Grabs current URL of website
+                    var currentURL = window.location.origin;
+    
+                    //Posts data to friends API
+                    $.post(currentURL + "/api/friends", input, function(data) {
+                        //Grabs results of pokemon that best matches user input
+                        $("#matchName").text(data.name);
+                        $("#matchPic").attr("src", data.picture);
+                    });
+    
+                    //Shows the modal
+                    $('.modal').modal();
+    
+                    //Clears all input
+                    //$('.cl').val('');
+                } else {
+                    alert("Please fill out all fields before submission!")
+                }
+            });
+        });
+        </script>
 
 </html>
