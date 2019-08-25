@@ -27,17 +27,20 @@ module.exports = function(app) {
         console.log("User inputes: " + userScore);
         console.log("Total of user value: " + sum);
         
-        //Traverses friends array
+        //Traverses friends.js array
         for(var i = 0; i < friends.length; i++) {
             scoreDifference = 0;
-            //Creates array for each Pokemon's values
+            friendSum = 0;
+            //Stores value array for each friends' values
             friendArray = friends[i].scores;
-            //Calculates the scoreDifference between each Pokemon's values and the user's values
-            for(var j = 0; j < friendArray.length; j++) {
-                scoreDifference = scoreDifference + (Math.abs((friendSum += friendArray[j]) - sum));
-            }
-        //Pushes all results to scoreArray
-        scoreArray.push(scoreDifference);
+                //Calculates total value for friend
+                for(var j = 0; j < friendArray.length; j++) {
+                    friendSum += friendArray[j]
+                };
+            //Calculates the scoreDifference between each Pokemon's values and the user's values  
+            scoreDifference = Math.abs(friendSum - sum);
+            //Pushes all results to scoreArray
+            scoreArray.push(scoreDifference);
         };
         console.log("All friend values: " + scoreArray);
 
