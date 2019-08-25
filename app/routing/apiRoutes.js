@@ -29,6 +29,9 @@ module.exports = function(app) {
         console.log(userScore);
         console.log(userArray);
         console.log(sum);
+        console.log(req.body);
+        console.log(req.body.scores);
+
         
     
         for(var i = 0; i < friends.length; i++) {
@@ -41,7 +44,7 @@ module.exports = function(app) {
             //Pushes all results to scoreArray
             scoreArray.push(scoreDifference);  
         };
-        console.log(scoreArray);
+        //console.log(scoreArray);
 
         //Finds best match after comparing pokemon scores to user input
         for(var i = 0; i < scoreArray.length; i++) {
@@ -52,7 +55,9 @@ module.exports = function(app) {
 
         //Assigns best matched pokemon
         var pokemon = friends[pkmnMatch];
-        res.json(pokemon);                     
+        res.json(pokemon);  
+        
+        friends.push(req.body);
 
     });  
 
