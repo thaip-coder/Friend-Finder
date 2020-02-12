@@ -21,7 +21,7 @@ Homework 13
     - ![Screenshot](pkmnfriend.png)
     
 5. Deployed version of the app:
-   [Heroku Deployed Version](https://ffttp222.herokuapp.com/)
+   [Heroku Deployed Version](https://fftthaip-coder.herokuapp.com/)
 
 6. My app utilized the following:
     - Express module

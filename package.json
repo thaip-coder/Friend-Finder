@@ -9,15 +9,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tp222/Friend-Finder.git"
+    "url": "git+https://github.com/thaip-coder/Friend-Finder.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/tp222/Friend-Finder/issues"
+    "url": "https://github.com/thaip-coder/Friend-Finder/issues"
   },
-  "homepage": "https://github.com/tp222/Friend-Finder#readme",
+  "homepage": "https://github.com/thaip-coder/Friend-Finder#readme",
   "dependencies": {
     "body-parser": "^1.19.0",
     "express": "^4.17.1",
